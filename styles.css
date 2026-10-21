@@ -161,12 +161,14 @@ nav {
     background-color: #1e293b;
 }
 
-/* LADO DIREITO: FOTO + CÓDIGO */
+/* 2. Forneça propriedades de controle para a coluna visual não estourar */
 .hero-visual {
     flex: 0.8;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    max-width: 100%;       /* Evita estouro de layout em resoluções intermediárias */
 }
 
 .profile-container {
@@ -178,8 +180,11 @@ nav {
 .profile-avatar {
     width: 150px;
     height: 150px;
+    max-width: 100%;       /* Impede que a imagem ignore os limites do container pai */
+    height: auto;          /* Mantém a proporção correta baseada na largura */
+    aspect-ratio: 1 / 1;   /* Força a proporção 1:1 quadrada antes de arredondar */
     border-radius: 50%; 
-    object-fit: cover;  
+    object-fit: cover;     /* Garante que o rosto não fique esticado ou amassado */
     border: 3px solid #3b82f6; 
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); 
 }
