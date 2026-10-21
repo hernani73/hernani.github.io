@@ -1,0 +1,352 @@
+/* ==========================================
+   RESET & CONFIGURAÇÕES GERAIS
+   ========================================== */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    background-color: #0b0f19; 
+    color: #f1f5f9;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   NAVEGAÇÃO REATIVA
+   ========================================== */
+nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    background-color: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1e293b;
+    padding: 1rem 2rem; 
+    z-index: 50;
+}
+
+.nav-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: #fff; 
+    text-decoration: none; 
+    transition: opacity 0.2s ease, transform 0.2s ease; 
+}
+
+.logo:hover { 
+    opacity: 0.85; 
+}
+
+.nav-links a { 
+    color: #94a3b8; 
+    text-decoration: none; 
+    margin-left: 1.5rem; 
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover { 
+    color: #fff; 
+}
+
+/* Customização e Hover do Link "Contato" na Nav */
+.nav-links a.btn-contact {
+    border: 1px solid rgba(168, 85, 247, 0.4); 
+    padding: 0.4rem 0.8rem; 
+    color: #a855f7; 
+    border-radius: 6px;
+}
+
+.nav-links a.btn-contact:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: #a855f7;
+    color: #c084fc;
+}
+
+/* ==========================================
+   ESTRUTURA HERO SEÇÃO
+   ========================================== */
+.hero { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 8rem 2rem 4rem 2rem; 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 3rem; 
+    min-height: 80vh; 
+    align-items: center; 
+}
+
+@media(min-width: 768px) { 
+    .hero { grid-template-columns: 1fr 1fr; } 
+}
+
+.badge { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    background: rgba(16, 185, 129, 0.1); 
+    color: #34d399; 
+    padding: 0.25rem 0.75rem; 
+    border-radius: 9999px; 
+    font-size: 0.75rem; 
+    font-weight: 500; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid rgba(16, 185, 129, 0.2); 
+}
+
+.badge span { 
+    width: 8px; 
+    height: 8px; 
+    background: #34d399; 
+    border-radius: 50%; 
+    display: inline-block; 
+}
+
+h1 { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    line-height: 1.2; 
+    margin-bottom: 1rem; 
+    color: #fff; 
+}
+
+.gradient-text { 
+    background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.desc { 
+    color: #94a3b8; 
+    font-size: 1.125rem; 
+    margin-bottom: 2rem; 
+}
+
+.card-code { 
+    background: rgba(30, 41, 59, 0.5); 
+    border: 1px solid #334155; 
+    padding: 1.5rem; 
+    border-radius: 16px; 
+    font-family: monospace; 
+    font-size: 0.85rem; 
+    color: #a855f7; 
+}
+
+/* ==========================================
+   BOTÕES PRINCIPAIS (REATIVOS)
+   ========================================== */
+.btn-group { 
+    display: flex; 
+    gap: 1rem; 
+}
+
+.btn-primary-main, .btn-secondary-main {
+    display: inline-block;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 8px; 
+    font-weight: 500; 
+    text-decoration: none; 
+    outline: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary-main { 
+    background: #9333ea; 
+    color: #fff; 
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15);
+}
+
+.btn-primary-main:hover { 
+    background: #a855f7; 
+    box-shadow: 0 4px 20px rgba(147, 51, 234, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary-main { 
+    background: #1e293b; 
+    color: #fff; 
+    border: 1px solid #334155; 
+}
+
+.btn-secondary-main:hover {
+    background: #2d3748;
+    border-color: #4a5568;
+    transform: translateY(-2px);
+}
+
+/* Classe utilitária adicionada via Script na Parte 3 ao clicar */
+.click-active {
+    transform: translateY(0) scale(0.96) !important;
+}
+
+/* ==========================================
+   SEÇÃO DE PROJETOS E SEUS CARDS
+   ========================================== */
+.projects-section {
+    background: rgba(17, 23, 38, 0.6); 
+    border-top: 1px solid #1e293b; 
+    border-bottom: 1px solid #1e293b; 
+    padding: 5rem 1.5rem;
+}
+
+.section-title-container {
+    max-width: 1100px; 
+    margin: 0 auto 3rem auto;
+}
+
+.section-title {
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: #fff; 
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+}
+
+.projects-grid {
+    max-width: 1100px; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1.25rem;
+}
+
+.project-card {
+    background: #111726; 
+    border: 1px solid #1e293b; 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    min-height: 350px;
+}
+
+.project-name {
+    font-size: 1.2rem; 
+    margin: 0.5rem 0; 
+    color: #fff;
+}
+
+.project-desc {
+    font-size: 0.85rem; 
+    color: #94a3b8; 
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.4rem; 
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags span {
+    background: #1e293b; 
+    color: #cbd5e1; 
+    font-family: monospace; 
+    font-size: 0.7rem; 
+    padding: 0.2rem 0.4rem; 
+    border-radius: 4px;
+}
+
+.project-footer {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 0.8rem; 
+    border-top: 1px solid #1e293b; 
+    padding-top: 1rem;
+}
+
+.category-tag {
+    font-weight: 500;
+}
+.category-tag.back-end { color: #f59e0b; }
+.category-tag.systems { color: #3b82f6; }
+.category-tag.advanced { color: #ec4899; }
+
+/* Links Internos dos Projetos */
+.project-links a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.project-links a.link-swagger { color: #34d399; }
+.project-links a.link-swagger:hover { color: #6ee7b7; text-shadow: 0 0 8px rgba(52, 211, 153, 0.4); }
+
+.project-links a.link-code { color: #a855f7; }
+.project-links a.link-code:hover { color: #c084fc; text-shadow: 0 0 8px rgba(168, 85, 247, 0.4); }
+
+/* ==========================================
+   SEÇÃO DE CONTATO E RODAPÉ
+   ========================================== */
+.contact-section {
+    padding: 6rem 1.5rem;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-highlight {
+    color: #a855f7;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.contact-desc {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+}
+
+.contact-buttons {
+    justify-content: center;
+}
+
+footer {
+    border-top: 1px solid #1e293b;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Foco de acessibilidade para navegação via teclado */
+a:focus-visible {
+    outline: 2px solid #a855f7;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
