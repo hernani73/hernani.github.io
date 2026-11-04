@@ -197,7 +197,7 @@ nav {
 }
 
 /* ==========================================
-   SEÇÃO DE PROJETOS (GRID TOTALMENTE CORRIGIDO)
+   SEÇÃO DE PROJETOS (MODERNA & ANIMADA)
    ========================================== */
 .projects-section {
     max-width: 1200px;
@@ -224,7 +224,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    align-items: stretch; /* Garante que todas as caixas fiquem com tamanhos idênticos */
+    align-items: stretch;
 }
 
 .project-card {
@@ -234,20 +234,38 @@ nav {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Mantém os elementos espaçados forçando o rodapé para baixo */
+    justify-content: space-between;
     gap: 1.5rem;
-    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    /* Transição elástica cúbica de alta fluidez */
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.45s ease, 
+                box-shadow 0.45s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    border-color: #475569;
+    transform: translateY(-8px) scale(1.01);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-name {
     font-size: 1.35rem;
     color: #f8fafc;
     margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .project-desc {
@@ -256,12 +274,138 @@ nav {
     margin-bottom: 0px;
 }
 
-/* Tags de Tecnologias */
+/* Indicador de Status Dinâmico (Pulse) */
+.live-pulse {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #22c55e;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.6s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Modificadores visuais para as caixas */
+.text-blue { color: #3b82f6; }
+.bg-blue { background-color: #3b82f6; }
+.text-purple { color: #a855f7; }
+.bg-purple { background-color: #a855f7; }
+
+/* Componente: Dashboard de Métricas */
+.mini-metrics-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px dashed #334155;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.metric-lbl {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* Componente: Terminal de Stream do Kafka */
+.kafka-stream-preview {
+    background: #020617;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    border: 1px solid #334155;
+}
+
+.stream-line {
+    font-size: 11px;
+    color: #38bdf8;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stream-line:last-child {
+    margin-bottom: 0;
+    color: #a7f3d0;
+}
+
+/* Componente: Estrutura de Requisição HTTP */
+.http-request-badge {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.http-method {
+    background: #e11d48;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: max-content;
+}
+
+.http-route {
+    font-size: 12px;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.http-header {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Footer Interno do Card & Tags */
+.card-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid #334155;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 0px;
 }
 
 .tech-tags span {
@@ -272,18 +416,6 @@ nav {
     border-radius: 0.25rem;
     border: 1px solid #1e293b;
     font-weight: 500;
-    display: inline-block;
-}
-
-/* Rodapé Alinhado de Forma Cirúrgica */
-.project-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #334155;
-    padding-top: 1rem;
-    margin-top: auto; /* Alinha na mesma linha de base do card */
-    width: 100%;
 }
 
 .category-tag {

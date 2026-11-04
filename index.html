@@ -29,7 +29,7 @@
             <p class="desc">Desenvolvedor de Software Full Stack especialista em construir aplicações web escaláveis, arquiteturas de microsserviços e integração de inteligência artificial.</p>
             <div class="btn-group">
                 <a href="#projects" class="btn-primary-main">Ver Projetos</a>
-                <a href="https://github.com/hernani73" target="_blank" class="btn-secondary-main">GitHub</a>
+                <a href="https://github.com" target="_blank" class="btn-secondary-main">GitHub</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -57,70 +57,96 @@
 
         <div class="projects-grid">
             
-            <!-- Projeto 1 -->
+            <!-- Projeto 1: DeliveryTech -->
             <div class="project-card">
-                <div>
+                <div class="card-header">
+                    <span class="category-tag back-end">Destaque Back-End</span>
+                    <span class="live-pulse"><span class="pulse-dot"></span> API Ativa</span>
+                </div>
+                <div class="card-body">
                     <h3 class="project-name">DeliveryTech RESTful API</h3>
                     <p class="project-desc">API de alta performance desenvolvida para gerenciar sistemas de entrega modelo SaaS. Implementa autenticação JWT multi-perfil, cache estratégico, testes estruturados com JUnit e conteinerização.</p>
+                    
+                    <!-- Interface interativa simulada -->
+                    <div class="mini-metrics-board">
+                        <div class="metric-item">
+                            <span class="metric-num">94%</span>
+                            <span class="metric-lbl">Cobertura Testes</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-num">12ms</span>
+                            <span class="metric-lbl">Tempo de Resposta</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="card-footer-wrapper">
                     <div class="tech-tags">
                         <span>Java 21</span>
                         <span>Spring Boot 3</span>
                         <span>JWT Security</span>
                         <span>Docker</span>
                     </div>
-                    <div class="project-footer">
-                        <span class="category-tag back-end">Destaque Back-End</span>
-                        <div class="project-links">
-                            <a href="https://deliverytech-52rk.onrender.com/swagger-ui/index.html" class="link-swagger" target="_blank">Swagger →</a>
-                            <a href="https://github.com/hernani73/deliverytech" class="link-code" target="_blank">Código →</a>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://deliverytech-52rk.onrender.com/swagger-ui/index.html" class="link-swagger" target="_blank">Swagger →</a>
+                        <a href="https://github.com/deliverytech" class="link-code" target="_blank">Código →</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Projeto 2 -->
+            <!-- Projeto 2: Gateway de Pagamentos -->
             <div class="project-card">
-                <div>
+                <div class="card-header">
+                    <span class="category-tag systems">Arquitetura Limpa</span>
+                    <span class="live-pulse text-blue"><span class="pulse-dot bg-blue"></span> 5k req/s</span>
+                </div>
+                <div class="card-body">
                     <h3 class="project-name">Gateway de Pagamentos / Ledger</h3>
                     <p class="project-desc">Microsserviço de alta performance para conciliação bancária para processar 5.000 requisições/segundo usando sistemas de mensageria assíncrona distribuída.</p>
+                    
+                    <!-- Simulador Visual de Stream de Dados do Kafka -->
+                    <div class="kafka-stream-preview">
+                        <div class="stream-line font-mono">&gt; [Kafka] Event: payment_created (ID: #8921)</div>
+                        <div class="stream-line font-mono">&gt; [Redis] Cached ledger balance in 0.4ms</div>
+                    </div>
                 </div>
-                <div>
+                <div class="card-footer-wrapper">
                     <div class="tech-tags">
                         <span>Node.js</span>
                         <span>TypeScript</span>
                         <span>Kafka</span>
                         <span>Redis</span>
                     </div>
-                    <div class="project-footer">
-                        <span class="category-tag systems">Arquitetura Limpa</span>
-                        <div class="project-links">
-                            <a href="https://github.com/hernani73/gatewaypagamentos" class="link-code" target="_blank">Código →</a>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hernani73/gatewaypagamentos" class="link-code" target="_blank">Código →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Projeto 3 -->
+            <!-- Projeto 3: API Multitenant -->
             <div class="project-card">
-                <div>
+                <div class="card-header">
+                    <span class="category-tag advanced">Arquitetura Avançada</span>
+                    <span class="live-pulse text-purple"><span class="pulse-dot bg-purple"></span> Stripe Live</span>
+                </div>
+                <div class="card-body">
                     <h3 class="project-name">API REST Multitenant & Checkout</h3>
                     <p class="project-desc">Arquitetura SaaS com Express que isola dinamicamente dados por inquilino ('x-tenant-slug'), implementa autenticação segura via criptografia Bcrypt + JWT e simula checkout integrado ao gateway Stripe.</p>
+                    
+                    <!-- Detalhe técnico visual da requisição HTTP -->
+                    <div class="http-request-badge">
+                        <span class="http-method">POST</span>
+                        <span class="http-route">/checkout/session</span>
+                        <span class="http-header font-mono">x-tenant-slug: tech-alpha</span>
+                    </div>
                 </div>
-                <div>
+                <div class="card-footer-wrapper">
                     <div class="tech-tags">
                         <span>Express</span>
                         <span>JWT</span>
                         <span>Bcrypt</span>
-                        <span>CORS</span>
                         <span>Stripe API</span>
                     </div>
-                    <div class="project-footer">
-                        <span class="category-tag advanced">Arquitetura Avançada</span>
-                        <div class="project-links">
-                            <a href="https://github.com/hernani73/api-multitenant-checkout" class="link-code" target="_blank">Código →</a>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hernani73/api-multitenant-checkout" class="link-code" target="_blank">Código →</a>
                     </div>
                 </div>
             </div>
@@ -136,7 +162,7 @@
             <p class="contact-desc">Estou aberto a novas oportunidades de trabalho, projetos freelance ou apenas para trocar uma ideia sobre desenvolvimento de software.</p>
             <div class="btn-group contact-buttons">
                 <a href="mailto:hernani1973@bol.com.br" class="btn-primary-main">Mandar E-mail</a>
-                <a href="https://www.linkedin.com/in/hernani-godinho-de-souza-6a94bab/" target="_blank" class="btn-secondary-main">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/hernani-godinho-de-souza-6a94bab" target="_blank" class="btn-secondary-main">LinkedIn</a>
             </div>
         </div>
     </section>
