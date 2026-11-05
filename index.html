@@ -1,178 +1,439 @@
-<!DOCTYPE html>
-<html lang="pt-BR" style="scroll-behavior: smooth;">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Portfolio | Full Stack Developer</title>
-    <!-- Vínculo com a Parte 2 (CSS) -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* ==========================================
+   RESET & CONFIGURAÇÕES GLOBAIS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
 
-    <!-- Navegação Superior -->
-    <nav>
-        <div class="nav-container">
-            <a href="#about" class="logo">&lt;Dev<span class="gradient-text">Stack</span>/&gt;</a>
-            <div class="nav-links">
-                <a href="#about">Sobre</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact" class="btn-contact">Contato</a>
-            </div>
-        </div>
-    </nav>
+body {
+    background-color: #0f172a; /* Fundo escuro slate moderno */
+    color: #f8fafc; /* Texto claro */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <!-- Apresentação (Hero) -->
-    <header id="about" class="hero">
-        <div class="hero-content">
-            <div class="badge"><span></span> Disponível para novos projetos</div>
-            <h1>Olá, eu sou o <br><span class="gradient-text">Hernani</span></h1>
-            <p class="desc">Desenvolvedor de Software Full Stack especialista em construir aplicações web escaláveis, arquiteturas de microsserviços e integração de inteligência artificial.</p>
-            <div class="btn-group">
-                <a href="#projects" class="btn-primary-main">Ver Projetos</a>
-                <a href="https://github.com/hernani73/" target="_blank" class="btn-secondary-main">GitHub</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <!-- Foto de Perfil integrada ao estilo técnico -->
-            <div class="profile-container">
-                <img src="hernani.jpg" alt="Foto do Hernani" class="profile-avatar">
-            </div>
-            
-            <!-- Bloco de Código -->
-            <div class="card-code">
-                <p style="color:#3b82f6">const <span style="color:#f43f5e">developer</span> = {</p>
-                <p>&nbsp;&nbsp;name: <span style="color:#eab308">'Hernani'</span>,</p>
-                <p>&nbsp;&nbsp;role: <span style="color:#eab308">'Full Stack Developer'</span></p>
-                <p style="color:#3b82f6">};</p>
-            </div>
-        </div>
-    </header>
+/* Utilitário para Textos com Gradiente (Nome e Logo) */
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
 
-    <!-- Seção de Projetos -->
-    <section id="projects" class="projects-section">
-        <div class="section-title-container">
-            <h2 class="section-title">Projetos em Destaque</h2>
-            <p class="section-subtitle">Aplicações robustas simulando cenários complexos exigidos pelo mercado.</p>
-        </div>
+/* ==========================================
+   NAVEGAÇÃO SUPERIOR
+   ========================================== */
+nav {
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
 
-        <div class="projects-grid">
-            
-            <!-- Projeto 1: DeliveryTech -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="category-tag back-end">Destaque Back-End</span>
-                    <span class="live-pulse"><span class="pulse-dot"></span> API Ativa</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="project-name">DeliveryTech RESTful API</h3>
-                    <p class="project-desc">API de alta performance desenvolvida para gerenciar sistemas de entrega modelo SaaS. Implementa autenticação JWT multi-perfil, cache estratégico, testes estruturados com JUnit e conteinerização.</p>
-                    
-                    <!-- Interface interativa simulada -->
-                    <div class="mini-metrics-board">
-                        <div class="metric-item">
-                            <span class="metric-num">94%</span>
-                            <span class="metric-lbl">Cobertura Testes</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-num">12ms</span>
-                            <span class="metric-lbl">Tempo de Resposta</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer-wrapper">
-                    <div class="tech-tags">
-                        <span>Java 21</span>
-                        <span>Spring Boot 3</span>
-                        <span>JWT Security</span>
-                        <span>Docker</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://deliverytech-52rk.onrender.com/swagger-ui/index.html" class="link-swagger" target="_blank">Swagger →</a>
-                        <a href="https://github.com/deliverytech" class="link-code" target="_blank">Código →</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Projeto 2: Gateway de Pagamentos -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="category-tag systems">Arquitetura Limpa</span>
-                    <span class="live-pulse text-blue"><span class="pulse-dot bg-blue"></span> 5k req/s</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="project-name">Gateway de Pagamentos / Ledger</h3>
-                    <p class="project-desc">Microsserviço de alta performance para conciliação bancária para processar 5.000 requisições/segundo usando sistemas de mensageria assíncrona distribuída.</p>
-                    
-                    <!-- Simulador Visual de Stream de Dados do Kafka -->
-                    <div class="kafka-stream-preview">
-                        <div class="stream-line font-mono">&gt; [Kafka] Event: payment_created (ID: #8921)</div>
-                        <div class="stream-line font-mono">&gt; [Redis] Cached ledger balance in 0.4ms</div>
-                    </div>
-                </div>
-                <div class="card-footer-wrapper">
-                    <div class="tech-tags">
-                        <span>Node.js</span>
-                        <span>TypeScript</span>
-                        <span>Kafka</span>
-                        <span>Redis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hernani73/gatewaypagamentos" class="link-code" target="_blank">Código →</a>
-                    </div>
-                </div>
-            </div>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-            <!-- Projeto 3: API Multitenant -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="category-tag advanced">Arquitetura Avançada</span>
-                    <span class="live-pulse text-purple"><span class="pulse-dot bg-purple"></span> Stripe Live</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="project-name">API REST Multitenant & Checkout</h3>
-                    <p class="project-desc">Arquitetura SaaS com Express que isola dinamicamente dados por inquilino ('x-tenant-slug'), implementa autenticação segura via criptografia Bcrypt + JWT e simula checkout integrado ao gateway Stripe.</p>
-                    
-                    <!-- Detalhe técnico visual da requisição HTTP -->
-                    <div class="http-request-badge">
-                        <span class="http-method">POST</span>
-                        <span class="http-route">/checkout/session</span>
-                        <span class="http-header font-mono">x-tenant-slug: tech-alpha</span>
-                    </div>
-                </div>
-                <div class="card-footer-wrapper">
-                    <div class="tech-tags">
-                        <span>Express</span>
-                        <span>JWT</span>
-                        <span>Bcrypt</span>
-                        <span>Stripe API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hernani73/api-multitenant-checkout" class="link-code" target="_blank">Código →</a>
-                    </div>
-                </div>
-            </div>
+.logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #f8fafc;
+    text-decoration: none;
+}
 
-        </div>
-    </section>
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
 
-    <!-- Seção de Contato -->
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <span class="contact-highlight">Vamos trabalhar juntos?</span>
-            <h2 class="contact-title">Entre em Contato</h2>
-            <p class="contact-desc">Estou aberto a novas oportunidades de trabalho, projetos freelance ou apenas para trocar uma ideia sobre desenvolvimento de software.</p>
-            <div class="btn-group contact-buttons">
-                <a href="mailto:hernani1973@bol.com.br" class="btn-primary-main">Mandar E-mail</a>
-                <a href="https://www.linkedin.com/in/hernani-godinho-de-souza-6a94bab" target="_blank" class="btn-secondary-main">LinkedIn</a>
-            </div>
-        </div>
-    </section>
+.nav-links a:hover {
+    color: #f8fafc;
+}
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Hernani. Desenvolvido com foco em alta performance.</p>
-    </footer>
+.nav-links .btn-contact {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: opacity 0.2s ease;
+}
 
-    <!-- Vínculo com a Parte 3 (JavaScript) -->
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-links .btn-contact:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================
+   SEÇÃO APRESENTAÇÃO (HERO)
+   ========================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    color: #38bdf8;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.badge span {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+}
+
+.desc {
+    font-size: 1.125rem;
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary-main {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary-main:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary-main {
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Correção aplicada aqui: Efeito Hover do botão secundário */
+.btn-secondary-main:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+    border-color: #f8fafc;
+}
+/* LADO DIREITO: FOTO + CÓDIGO */
+.hero-visual {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem; 
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;  
+    border: 3px solid #3b82f6; 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); 
+}
+
+.card-code {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   SEÇÃO DE PROJETOS (MODERNA & ANIMADA)
+   ========================================== */
+.projects-section {
+    max-width: 1200px;
+    margin: 8rem auto;
+    padding: 0 2rem;
+}
+
+.section-title-container {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: #f8fafc;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    font-size: 1.05rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.project-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    /* Transição elástica cúbica de alta fluidez */
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.45s ease, 
+                box-shadow 0.45s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-name {
+    font-size: 1.35rem;
+    color: #f8fafc;
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.project-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 0px;
+}
+
+/* Indicador de Status Dinâmico (Pulse) */
+.live-pulse {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #22c55e;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.6s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Modificadores visuais para as caixas */
+.text-blue { color: #3b82f6; }
+.bg-blue { background-color: #3b82f6; }
+.text-purple { color: #a855f7; }
+.bg-purple { background-color: #a855f7; }
+
+/* Componente: Dashboard de Métricas */
+.mini-metrics-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px dashed #334155;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.metric-lbl {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* Componente: Terminal de Stream do Kafka */
+.kafka-stream-preview {
+    background: #020617;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    border: 1px solid #334155;
+}
+
+.stream-line {
+    font-size: 11px;
+    color: #38bdf8;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stream-line:last-child {
+    margin-bottom: 0;
+    color: #a7f3d0;
+}
+
+/* Componente: Estrutura de Requisição HTTP */
+.http-request-badge {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.http-method {
+    background: #e11d48;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: max-content;
+}
+
+.http-route {
+    font-size: 12px;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.http-header {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Footer Interno do Card & Tags */
+.card-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid #334155;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tags span {
+    background-color: #0f172a;
+    color: #38bdf8;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.link-swagger { color: #10b981; }
+.link-swagger:hover { color: #34d399; }
+.link-code { color: #38bdf8; }
+.link-code:hover { color: #7dd3fc; }
