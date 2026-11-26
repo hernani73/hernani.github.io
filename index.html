@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Portfolio | Full Stack Developer</title>
-    <!-- Vínculo com a Parte 2 (CSS) -->
+    <title>Hernani Godinho de Souza | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Hernani Godinho de Souza, desenvolvedor Full Stack: sistemas de gestão para clínicas em produção, APIs em Java/Spring Boot e Node.js/TypeScript.">
+    <meta name="author" content="Hernani Godinho de Souza">
+    <link rel="canonical" href="https://hernanisouza.com.br/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://hernanisouza.com.br/">
+    <meta property="og:title" content="Hernani Godinho de Souza | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Sistemas de gestão para clínicas em produção, APIs em Java/Spring Boot e Node.js/TypeScript.">
+    <meta property="og:image" content="https://hernanisouza.com.br/hernani.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="hernani.jpg">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -29,13 +40,13 @@
             <p class="desc">Desenvolvedor de Software Full Stack especialista em construir aplicações web escaláveis, arquiteturas de microsserviços e integração de inteligência artificial.</p>
             <div class="btn-group">
                 <a href="#projects" class="btn-primary-main">Ver Projetos</a>
-                <a href="https://github.com/hernani73/" target="_blank" class="btn-secondary-main">GitHub</a>
+                <a href="https://github.com/hernani73/" target="_blank" rel="noopener" class="btn-secondary-main">GitHub</a>
             </div>
         </div>
         <div class="hero-visual">
             <!-- Foto de Perfil integrada ao estilo técnico -->
             <div class="profile-container">
-                <img src="hernani.jpg" alt="Foto do Hernani" class="profile-avatar">
+                <img src="hernani.jpg" alt="Foto de Hernani Godinho de Souza" class="profile-avatar" width="150" height="150">
             </div>
             
             <!-- Bloco de Código -->
@@ -52,7 +63,7 @@
     <section id="projects" class="projects-section">
         <div class="section-title-container">
             <h2 class="section-title">Projetos em Destaque</h2>
-            <p class="section-subtitle">Aplicações robustas simulando cenários complexos exigidos pelo mercado.</p>
+            <p class="section-subtitle">Sistemas em produção usados no dia a dia de clínicas e aplicações que simulam cenários complexos do mercado.</p>
         </div>
 
         <div class="projects-grid">
@@ -153,17 +164,17 @@
                 </div>
                 <div class="card-body">
                     <h3 class="project-name">DeliveryTech RESTful API</h3>
-                    <p class="project-desc">API de alta performance desenvolvida para gerenciar sistemas de entrega modelo SaaS. Implementa autenticação JWT multi-perfil, cache estratégico, testes estruturados com JUnit e conteinerização.</p>
+                    <p class="project-desc">API REST para plataforma de delivery: clientes, restaurantes, produtos e pedidos com cálculo de total e acompanhamento de status. Autenticação JWT com controle de acesso por perfil, cache com Caffeine, documentação OpenAPI, testes com JUnit e Mockito e conteinerização com Docker.</p>
                     
                     <!-- Interface interativa simulada -->
                     <div class="mini-metrics-board">
                         <div class="metric-item">
-                            <span class="metric-num">94%</span>
-                            <span class="metric-lbl">Cobertura Testes</span>
+                            <span class="metric-num">4</span>
+                            <span class="metric-lbl">Perfis de acesso (JWT)</span>
                         </div>
                         <div class="metric-item">
-                            <span class="metric-num">12ms</span>
-                            <span class="metric-lbl">Tempo de Resposta</span>
+                            <span class="metric-num">5</span>
+                            <span class="metric-lbl">Recursos REST</span>
                         </div>
                     </div>
                 </div>
@@ -175,8 +186,8 @@
                         <span>Docker</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://deliverytech-52rk.onrender.com/swagger-ui/index.html" target="_blank">Swagger →</a>
-                        <a href="https://github.com/hernani73/deliverytech" class="link-code" target="_blank">Código →</a>
+                        <a href="https://deliverytech-52rk.onrender.com/swagger-ui/index.html" class="link-swagger" target="_blank" rel="noopener">Swagger →</a>
+                        <a href="https://github.com/hernani73/deliverytech" class="link-code" target="_blank" rel="noopener">Código →</a>
                     </div>
                 </div>
             </div>
@@ -184,16 +195,16 @@
             <div class="project-card">
                 <div class="card-header">
                     <span class="category-tag systems">Arquitetura Limpa</span>
-                    <span class="live-pulse text-blue"><span class="pulse-dot bg-blue"></span> 5k req/s</span>
+                    <span class="live-pulse text-blue"><span class="pulse-dot bg-blue"></span> Kafka + Redis</span>
                 </div>
                 <div class="card-body">
                     <h3 class="project-name">Gateway de Pagamentos / Ledger</h3>
-                    <p class="project-desc">Microsserviço de alta performance para conciliação bancária para processar 5.000 requisições/segundo usando sistemas de mensageria assíncrona distribuída.</p>
+                    <p class="project-desc">Microsserviço de pagamentos em Clean Architecture: cada transação passa por uma barreira de idempotência no Redis e é publicada em um tópico Kafka para o ledger. Observabilidade com OpenTelemetry (Jaeger) e métricas Prometheus, tudo orquestrado com Docker Compose.</p>
                     
                     <!-- Simulador Visual de Stream de Dados do Kafka -->
                     <div class="kafka-stream-preview">
-                        <div class="stream-line font-mono">&gt; [Kafka] Event: payment_created (ID: #8921)</div>
-                        <div class="stream-line font-mono">&gt; [Redis] Cached ledger balance in 0.4ms</div>
+                        <div class="stream-line font-mono">&gt; [Kafka] transação → ledger-topic</div>
+                        <div class="stream-line font-mono">&gt; [Redis] duplicata rejeitada</div>
                     </div>
                 </div>
                 <div class="card-footer-wrapper">
@@ -202,9 +213,10 @@
                         <span>TypeScript</span>
                         <span>Kafka</span>
                         <span>Redis</span>
+                        <span>OpenTelemetry</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hernani73/gatewaypagamentos" class="link-code" target="_blank">Código →</a>
+                        <a href="https://github.com/hernani73/gatewaypagamentos" class="link-code" target="_blank" rel="noopener">Código →</a>
                     </div>
                 </div>
             </div>
@@ -213,11 +225,11 @@
             <div class="project-card">
                 <div class="card-header">
                     <span class="category-tag advanced">Arquitetura Avançada</span>
-                    <span class="live-pulse text-purple"><span class="pulse-dot bg-purple"></span> Stripe Live</span>
+                    <span class="live-pulse text-purple"><span class="pulse-dot bg-purple"></span> Stripe Checkout</span>
                 </div>
                 <div class="card-body">
                     <h3 class="project-name">API REST Multitenant & Checkout</h3>
-                    <p class="project-desc">Arquitetura SaaS com Express que isola dinamicamente dados por inquilino ('x-tenant-slug'), implementa autenticação segura via criptografia Bcrypt + JWT e simula checkout integrado ao gateway Stripe.</p>
+                    <p class="project-desc">Arquitetura SaaS com Express que isola dinamicamente dados por inquilino ('x-tenant-slug'), implementa autenticação segura via criptografia Bcrypt + JWT e cria sessões de checkout no Stripe (modo de teste).</p>
                     
                     <!-- Detalhe técnico visual da requisição HTTP -->
                     <div class="http-request-badge">
@@ -234,7 +246,7 @@
                         <span>Stripe API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hernani73/api-multitenant-checkout" class="link-code" target="_blank">Código →</a>
+                        <a href="https://github.com/hernani73/api-multitenant-checkout" class="link-code" target="_blank" rel="noopener">Código →</a>
                     </div>
                 </div>
             </div>
@@ -251,7 +263,7 @@
             
             <div class="btn-group" style="justify-content: center;">
                 <a href="mailto:hernani1973@bol.com.br" class="btn-primary-main">Mandar E-mail</a>
-                <a href="https://www.linkedin.com/in/hernani-godinho-de-souza-6a94bab" target="_blank" class="btn-secondary-main">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/hernani-godinho-de-souza-6a94bab" target="_blank" rel="noopener" class="btn-secondary-main">LinkedIn</a>
             </div>
         </div>
     </section>
