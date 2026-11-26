@@ -437,3 +437,10 @@ nav {
 .link-swagger:hover { color: #34d399; }
 .link-code { color: #38bdf8; }
 .link-code:hover { color: #7dd3fc; }
+
+/* Projetos privados (sistemas com dados de pacientes): sem link público */
+.link-private {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+}
