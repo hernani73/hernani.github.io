@@ -444,3 +444,80 @@ nav {
     color: #64748b;
     font-weight: 600;
 }
+
+/* Feedback de clique (usado por script.js) */
+.click-active {
+    transform: scale(0.97);
+}
+
+/* ==========================================
+   RESPONSIVO (TABLETS E CELULARES)
+   ========================================== */
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
+@media (max-width: 860px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin: 3rem auto;
+        gap: 2.5rem;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .projects-section {
+        margin: 5rem auto;
+    }
+}
+
+@media (max-width: 560px) {
+    nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+    }
+
+    .nav-links a {
+        margin-left: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-links a:not(.btn-contact) {
+        display: none;
+    }
+
+    .hero,
+    .projects-section {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .btn-group {
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    #contact .contact-title {
+        font-size: 2rem !important;
+    }
+}
