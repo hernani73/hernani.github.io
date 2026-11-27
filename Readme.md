@@ -30,7 +30,7 @@ Desenvolvo com o **Claude Code** como assistente de programação: descrevo os r
 
 | Projeto | O que faz | Stack |
 |---|---|---|
-| **HGSOdonto** | Gestão odontológica: agenda com confirmação de consulta pelo paciente via link, lembretes por WhatsApp e e-mail, prontuário com odontograma, orçamentos, financeiro, CRM e estoque | Next.js · React 19 · TypeScript · Supabase · Resend |
+| **HGSOdonto** ([demo](https://hgsodontodemo.vercel.app) · [código](https://github.com/hernani73/hgsodonto)) | Gestão odontológica: agenda com confirmação de consulta pelo paciente via link, lembretes por WhatsApp e e-mail, prontuário com odontograma, orçamentos, financeiro, CRM e estoque | Next.js · React 19 · TypeScript · Supabase · Resend |
 | **[Site Odontologia e Fisioterapia Souzas](https://souzasodontofisio.com.br)** | Site da clínica com área do paciente (ficha online), agendamento pelo WhatsApp e SEO local com dados estruturados | React 19 · TanStack Start · Tailwind CSS 4 · Supabase · Vercel |
 | **Gestão de Fisioterapia** | Prontuário com anamnese, evolução e imagens. Migrado de um sistema desktop em Java Swing para um app web instalável (PWA) com regras de acesso por profissional | JavaScript · Vite · PWA · Supabase |
 
