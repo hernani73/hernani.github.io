@@ -1,6 +1,6 @@
 # Olá, eu sou o Hernani 👋
 
-**Desenvolvedor Full Stack Júnior** · React · Next.js · Node.js · TypeScript
+**Desenvolvedor Full Stack Júnior** · React · Next.js · Node.js · TypeScript<br>
 Cirurgião-dentista (FOUSP, 1996) · Web designer desde 1995 · Sorocaba, SP · Disponível para trabalho remoto
 
 Sou cirurgião-dentista com consultório próprio e trabalho com design de interfaces desde 1995. Comecei a programar para resolver os problemas do meu próprio consultório. Hoje mantenho **três sistemas web em produção**, usados no dia a dia da clínica, e procuro minha primeira vaga como desenvolvedor full stack.
